@@ -9,4 +9,5 @@ before_save(:titleize_product)
   def titleize_product
     self.name = self.name.titleize
   end
+  
 end  
