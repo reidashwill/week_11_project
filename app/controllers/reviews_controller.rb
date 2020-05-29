@@ -7,15 +7,15 @@ class ReviewsController < ApplicationController
 
   def new
     @product = Product.find(params[:product_id])
-    @review = Review.new
+    @review = @product.reviews.new
     render :new
   end
-#  THIS IS WHERE TO START AFTER LUNCH.  REVIEW THIS PART OF THE CONTROLLER!
+
   def create
+    @product = Product.find(params[:product_id])
     @review = Review.new(review_params)
-    @product = Product.find(@review.product_id)
     if @review.save
-      redirect_to product_path(@product)
+      redirect_to products_path(@product)
     else 
       render :new
     end
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
-    @product = Product.find(@review.product_id)
+    @product = Product.find(params[:product_id])
   end
 
   def update
@@ -50,6 +50,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:reveiw).permit(:author, :content_body, :rating)
+    params.require(:review).permit(:author, :content_body, :rating)
   end
+
 end
