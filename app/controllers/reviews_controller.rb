@@ -16,18 +16,34 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-
+    @review = Review.find(params[:id])
+    render :edit
   end
 
   def show
-
+    @review = Review.find(params[:id])
+    @product = Product.find(@review.product_id)
   end
 
   def update
-
+    @review = Reveiw.find(params[:id])
+    @product = Product.find(@review.product_id)
+    if @review.update(review_params)
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @product = Product.find(@review.product_id)
+    @review.destroy
+    redirect_to product_path(@product)
+  end
 
+  private
+  def review_params
+    params.require(:reveiw).permit(:author, :content_body, :rating)
   end
 end
