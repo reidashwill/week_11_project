@@ -1,4 +1,4 @@
-ProductsController < ApplicationController
+class ProductsController < ApplicationController
   def index
     @products = Product.all 
     render :index
@@ -48,5 +48,5 @@ ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :cost, :country_of_origin)
   end
-
+  
 end
