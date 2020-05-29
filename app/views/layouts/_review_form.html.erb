@@ -1,14 +1,16 @@
 <%= render "layouts/errors", :object => @review %>
 
+
 <%= form_for [@product, @review] do |f| %>
 <% if params[:product_id] %>
+<p>if statement test</p>
 <input type="hidden" id="product_id" name="review[product_id]" value='<%="#{params[:product_id]}"%>'>
 <% end %>
-<%= f.label :author %>
-<%= f.text_field :author %>
-<%= f.label :content_body %>
-<%= f.text_field :content_body %>
-<%= f.label :rating %>
-<%= f.number_field :rating %>
-<%= f.submit %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :content_body %>
+  <%= f.text_area :content_body %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <p><%= f.submit %></p>
 <% end %>
