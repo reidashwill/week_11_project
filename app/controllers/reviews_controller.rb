@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     render :new
   end
-
+#  THIS IS WHERE TO START AFTER LUNCH.  REVIEW THIS PART OF THE CONTROLLER!
   def create
     @review = Review.new(review_params)
     @product = Product.find(@review.product_id)
