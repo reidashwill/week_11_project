@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h1> <%= @product.name %> </h1>
+</div>
+
+<% if @product.reviews.any? %>
+  <h4>Check out what our customers are saying!</h4>
+
+  <% @product.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.author, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No reviews for this product yet!</p>
+<% end %>
+
+<p><%= link_to "Add a review", new_product_review_path(@product) %></p>
+
+<p> <%= link_to "edit this product", edit_product_path(@product) %> </p>
+<p> <%= link_to "Delete this product", product_path(@product),  :data => {:confirm => "Are you sure?", :method => "delete"} %> </p>
