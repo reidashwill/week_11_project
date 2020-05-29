@@ -26,3 +26,4 @@ end
 def destroy
 
 end
+app/views/views
