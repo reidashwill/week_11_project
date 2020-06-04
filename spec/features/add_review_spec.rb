@@ -10,7 +10,6 @@ describe "the add product proccess" do
     fill_in 'Content body', :with => 'dakslfjdladsjfljasdflkjdaslkfjlasdkjflksadjfkljdsalfkjasdalsdkjf'
     fill_in 'Rating', :with => '5'
     click_on 'Create Review'
-    click_link 'Sharks'
     expect(page).to have_content 'godfrey'
   end
 end
