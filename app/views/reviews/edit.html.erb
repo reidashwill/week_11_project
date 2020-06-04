@@ -2,3 +2,5 @@
   <h1> Edit <%= @review.author %>'s review</h1>
 </div>
 <%= render "layouts/review_form" %>
+</div>
+<button><%= link_to "back to product", product_path(@product) %></button>
