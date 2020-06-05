@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authorize, only: [:new, :create, :edit, :destroy]
+  before_action :authorize, except: [:index]
 
   def index
     @reviews = Review.all 

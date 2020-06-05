@@ -16,5 +16,13 @@
     <li><%= link_to product.name, product_path(product) %></li>
   <% end  %>
   </ul>
-  </div>
+  
 
+
+  <h4>These are the items we currently carry that are made in the USA!:</h4>
+  <ul>
+  <% Product.search("United States").each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+  </ul>
+</div>

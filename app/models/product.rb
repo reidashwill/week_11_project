@@ -21,4 +21,5 @@ class Product < ApplicationRecord
     .limit(1)
   )}
 
+  scope :search, -> (country_of_origin_parameter) { where("country_of_origin like ?", "%#{country_of_origin_parameter}%")}
 end

@@ -2,14 +2,12 @@
   <h1> <%= @product.name %> </h1>
   <h3> Produced in: <%= @product.country_of_origin %>
 </div>
-<% if current_user && current_user.admin %>
 <div class="sub-nav">
   <h4><%= link_to "Add a review", new_product_review_path(@product) %></h4>
   <h4><%= link_to "Edit this product", edit_product_path(@product) %> </h4>
   <h4><%= link_to "Delete this product", product_path(@product),  :data => {:confirm => "Are you sure?", :method => "delete"} %></h4>
 </div>
 <br>
-<% end %>
 
 <% if @product.reviews.any? %>
   <h4>Check out what our customers are saying!</h4>
