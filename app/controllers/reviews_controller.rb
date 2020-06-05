@@ -22,24 +22,9 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def edit
-    @review = Review.find(params[:id])
-    render :edit
-  end
-
   def show
     @review = Review.find(params[:id])
     @product = Product.find(params[:product_id])
-  end
-
-  def update
-    @review = Reveiw.find(params[:id])
-    @product = Product.find(@review.product_id)
-    if @review.update(review_params)
-      redirect_to product_path(@product)
-    else
-      render :edit
-    end
   end
 
   def destroy
