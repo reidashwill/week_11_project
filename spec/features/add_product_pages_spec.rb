@@ -2,12 +2,14 @@ require 'rails_helper'
 
 describe "the add product proccess" do
   it "adds a new product" do
-    admin = User.new({:email => "admin@test.com"})
-    admin.encrypt_password
-    admin.admin = true
-    admin.save
+    admin = User.create!(email: "admin@test.com", password: "password", password_confirmation: "password", admin: true) 
+    visit 'signin'
+    fill_in 'email', :with => 'admin@test.com'
+    fill_in 'password', :with => 'password'
+    within("form") do
+      click_on 'Sign in'
+    end
     visit products_path
-    save_and_open_page
     click_link 'Create a product'
     fill_in 'Name', :with => 'test'
     fill_in 'Cost', :with => '5'

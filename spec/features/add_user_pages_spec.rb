@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe "the add user proccess" do
+
   it "adds a new user" do
     visit 'signup'
-    
     fill_in 'user[email]', :with => 'testing@test.com'
     fill_in 'user[password]', :with => 'password'
     fill_in 'user[password_confirmation]', :with => 'password'
@@ -29,5 +29,6 @@ describe "the add user proccess" do
     click_on 'Sign out'
     expect(page).to have_content "You've signed out"
   end
+  
 end
 
