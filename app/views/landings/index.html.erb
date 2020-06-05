@@ -2,25 +2,19 @@
   <h1> Mario's Foods</h1>
 </div>
 <div class="row">
-  <div class="col-sm-5">
+  
   <h4>Check out some of our most recent items!</h4>
-    <ul>
-      <% Product.three_most_recent.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-      <% end %>
-    </ul>
-    
-    <h4>This is our current most popular item! (based on number of reviews):</h4>
-    <ul>
-    <%  Product.most_reviews.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end  %>
-    </ul>
+  <ul>
+    <% Product.three_most_recent.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+  
+  <h4>This is our current most popular item! (based on number of reviews):</h4>
+  <ul>
+  <%  Product.most_reviews.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+  <% end  %>
+  </ul>
+  </div>
 
-  </div>
-  </div>
-  <div class="col-sm-5">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident excepturi atque error. Sint dolorum nostrum temporibus nam harum. Neque sunt, repellendus vel natus soluta eum adipisci modi ducimus consequuntur quisquam.</p>
-    <br>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi minus nostrum dolor perferendis repudiandae id. Quisquam officia ea eligendi maiores! Quae odio deleniti ea vero. Ea, consequuntur? Cupiditate, consectetur cum?</p>
-  </div>

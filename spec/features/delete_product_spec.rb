@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "the edit a product proccess" do
-  it "edits a product do" do
+describe "the delete a product proccess" do
+  it "deletes a product do" do
     Product.create!(name: "Sharks", cost: "5", country_of_origin: "China")
     admin = User.create!(email: "admin@test.com", password: "password", password_confirmation: "password", admin: true) 
     visit 'signin'

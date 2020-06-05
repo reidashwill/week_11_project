@@ -12,7 +12,7 @@ describe "the edit a product proccess" do
     end
     visit products_path
     click_link 'Sharks'
-    click_link 'edit this product'
+    click_link 'Edit this product'
     fill_in 'Name', :with => 'godfrey'
     fill_in 'Cost', :with => '3'
     fill_in 'Country of origin', :with => 'merica'
@@ -30,7 +30,7 @@ describe "the edit a product proccess" do
     end
     visit products_path
     click_link 'Sharks'
-    click_link 'edit this product'
+    click_link 'Edit this product'
     fill_in 'Name', :with => 'godfrey'
     fill_in 'Cost', :with => '3'
     fill_in 'Country of origin', :with => ''
