@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
+  helper_method :is_admin?
 
   # Add additional helper method for admin authentication here?
 
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
       flash[:alert] = "You aren't authorized to visit that page."
       redirect_to '/'
     end
+  end
+  
+  def is_admin?
+    current_user && current_user.admin
   end
   
 end
