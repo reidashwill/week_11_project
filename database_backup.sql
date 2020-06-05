@@ -121,6 +121,42 @@ CREATE TABLE public.schema_migrations (
 ALTER TABLE public.schema_migrations OWNER TO reidashwill;
 
 --
+-- Name: users; Type: TABLE; Schema: public; Owner: reidashwill
+--
+
+CREATE TABLE public.users (
+    id bigint NOT NULL,
+    email character varying,
+    password_hash character varying,
+    password_salt character varying,
+    admin boolean DEFAULT false
+);
+
+
+ALTER TABLE public.users OWNER TO reidashwill;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: reidashwill
+--
+
+CREATE SEQUENCE public.users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO reidashwill;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: reidashwill
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
 -- Name: products id; Type: DEFAULT; Schema: public; Owner: reidashwill
 --
 
@@ -132,6 +168,13 @@ ALTER TABLE ONLY public.products ALTER COLUMN id SET DEFAULT nextval('public.pro
 --
 
 ALTER TABLE ONLY public.reviews ALTER COLUMN id SET DEFAULT nextval('public.reviews_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: reidashwill
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
@@ -148,6 +191,7 @@ environment	development	2020-05-29 15:15:03.579522	2020-05-29 15:15:03.579522
 --
 
 COPY public.products (id, name, cost, country_of_origin, created_at, updated_at) FROM stdin;
+518	Test Product	4	nunya	2020-06-04 20:33:15.79869	2020-06-04 20:33:15.79869
 468	Adzuki Beans	52	Qatar	2020-05-29 23:43:06.343393	2020-05-29 23:43:06.343393
 469	Red Cabbage	65	Faroe Islands	2020-05-29 23:43:06.375598	2020-05-29 23:43:06.375598
 470	Wasabi	10	Vanuatu	2020-05-29 23:43:06.399544	2020-05-29 23:43:06.399544
@@ -206,6 +250,9 @@ COPY public.products (id, name, cost, country_of_origin, created_at, updated_at)
 --
 
 COPY public.reviews (id, author, content_body, rating, product_id, created_at, updated_at) FROM stdin;
+2561	Reid	This is a test review for this product.  hopefully it works out okay.	1	518	2020-06-05 16:22:42.311787	2020-06-05 16:22:42.311787
+2562	Admin Reid	This is a test to verify that the admin can still add reviews	1	518	2020-06-05 16:45:28.160265	2020-06-05 16:45:28.160265
+2563	godfrey	sdfdasfvdfgdfsfgdsgdagfsfgssdfgsdfgsdgffddffgdsgfsdfdgfsdfg	1	518	2020-06-05 20:03:22.970678	2020-06-05 20:03:22.970678
 2311	Wesley Crusher	Hic magni eius. Voluptatem illum hic. Repellendus quia earum. Maiores vel .	4	468	2020-05-29 23:43:06.354948	2020-05-29 23:43:06.354948
 2312	Hikaru Sulu	Omnis nostrum adipisci. Voluptas illum animi. Eius neque non. Dicta repell.	5	468	2020-05-29 23:43:06.359489	2020-05-29 23:43:06.359489
 2313	Julian Bashir	Ab veniam qui. Aut fuga laudantium. Ut eveniet voluptas. Sit et dolores. M.	3	468	2020-05-29 23:43:06.364821	2020-05-29 23:43:06.364821
@@ -467,6 +514,20 @@ COPY public.schema_migrations (version) FROM stdin;
 20200529151244
 20200529151704
 20200529152750
+20200605150932
+20200605151152
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: reidashwill
+--
+
+COPY public.users (id, email, password_hash, password_salt, admin) FROM stdin;
+1	user@test.com	$2a$12$CbIHzkcMy0LYF77Qk2HgO.rINhMfxEMw4h0eWllaeIieRfBRmcs2C	$2a$12$CbIHzkcMy0LYF77Qk2HgO.	f
+3	verify@testing.com	$2a$12$icAjPIButXVx1eFo96ktye72EtoySU03M/9T4I0qjgEVHsZEptzVe	$2a$12$icAjPIButXVx1eFo96ktye	f
+4	test@test.com	$2a$12$JMsKAtSS7qnYNBjStx.b5.RvU.R1p9.bIPHqHWiFN/bNXHyc/z9Hy	$2a$12$JMsKAtSS7qnYNBjStx.b5.	f
+2	admin@test.com	$2a$12$Q/bXK8MW6UDEuaxET6/zVuR5BwoWHL3rDiODh1thglGZ0PrmuqIbi	$2a$12$Q/bXK8MW6UDEuaxET6/zVu	t
 \.
 
 
@@ -474,14 +535,21 @@ COPY public.schema_migrations (version) FROM stdin;
 -- Name: products_id_seq; Type: SEQUENCE SET; Schema: public; Owner: reidashwill
 --
 
-SELECT pg_catalog.setval('public.products_id_seq', 517, true);
+SELECT pg_catalog.setval('public.products_id_seq', 518, true);
 
 
 --
 -- Name: reviews_id_seq; Type: SEQUENCE SET; Schema: public; Owner: reidashwill
 --
 
-SELECT pg_catalog.setval('public.reviews_id_seq', 2560, true);
+SELECT pg_catalog.setval('public.reviews_id_seq', 2563, true);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: reidashwill
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 4, true);
 
 
 --
@@ -514,6 +582,14 @@ ALTER TABLE ONLY public.reviews
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: reidashwill
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
 --
