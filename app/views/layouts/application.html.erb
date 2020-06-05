@@ -23,11 +23,10 @@
           <% else %>
             <%= link_to "Sign up", '/signup' %> | <%= link_to "Sign in", '/signin' %>
           <% end %>
-
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-    <%= id="vegetable-pic" image_tag('vegetable.png') %>
+          <%= flash[:alert] %>
+          <%= flash[:notice] %>
           <%= yield %>
+          <%= image_tag('vegetable.png') %>
         </div>
         <div class="col-md-2"></div>
       </div>
