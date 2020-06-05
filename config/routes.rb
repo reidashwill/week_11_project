@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  root to: "landings#index"
-  resources :products do
-    resources :reviews
-  end
-
   # User Routes
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
@@ -12,4 +7,10 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
+  root to: "landings#index"
+  
+  resources :products do
+    resources :reviews
+  end
+
 end
