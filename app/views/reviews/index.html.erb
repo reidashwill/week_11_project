@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h1> All Reviews </h1>
+</div>
+<% if @reviews.any? %>
+<ul>
+<% @reviews.each do |review| %>
+<li><%= review.author %></li>
+    <%= review.content_body %>
+    <%= review.rating %>
+<% end %>
+</ul>
+<% else %>
+<p>There are no reviews yet!</p>
+<% end %>

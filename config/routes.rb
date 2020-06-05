@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
   root to: "landings#index"
 
+  get '/reviews' => 'reviews#index'
   resources :products do
     resources :reviews
   end
