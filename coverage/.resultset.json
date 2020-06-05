@@ -359,8 +359,8 @@
           1,
           null,
           1,
-          113,
-          96,
+          119,
+          98,
           null,
           null,
           null,
@@ -384,8 +384,8 @@
         "lines": [
           1,
           1,
-          12,
-          12,
+          14,
+          14,
           null,
           null
         ]
@@ -493,21 +493,21 @@
         "lines": [
           1,
           1,
-          4,
-          4,
+          5,
+          5,
           4,
           4,
           4,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           null,
           1,
-          1,
-          1,
-          1,
+          2,
+          2,
+          2,
           null,
           null
         ]
@@ -522,25 +522,25 @@
           null,
           null,
           1,
+          9,
+          null,
+          null,
+          1,
           8,
-          null,
-          null,
-          1,
+          8,
           7,
           7,
-          6,
-          6,
-          6,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
           7,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          8,
           null,
           null
         ]
@@ -606,13 +606,13 @@
           1,
           null,
           1,
-          10,
-          10,
+          11,
+          11,
           null,
           null,
           1,
-          4,
-          4,
+          5,
+          5,
           4,
           null,
           null,
@@ -813,6 +813,29 @@
           null
         ]
       },
+      "/Users/reidashwill/Desktop/week_11_project/spec/features/user_sign_in_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/reidashwill/Desktop/week_11_project/spec/features/users_index_page_spec.rb": {
         "lines": [
           1,
@@ -876,6 +899,6 @@
         ]
       }
     },
-    "timestamp": 1591389163
+    "timestamp": 1591389993
   }
 }
