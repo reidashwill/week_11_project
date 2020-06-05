@@ -3,64 +3,6 @@
     "coverage": {
       "/Users/reidashwill/Desktop/week_11_project/spec/features/add_product_pages_spec.rb": {
         "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/reidashwill/Desktop/week_11_project/spec/features/add_review_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/reidashwill/Desktop/week_11_project/spec/features/add_user_pages_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
           1,
           null,
           1,
@@ -69,7 +11,15 @@
           1,
           1,
           1,
-          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null
         ]
@@ -684,8 +634,8 @@
           1,
           null,
           1,
-          2,
-          2,
+          4,
+          4,
           null,
           null,
           1,
@@ -714,6 +664,62 @@
           1,
           1,
           null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/reidashwill/Desktop/week_11_project/spec/features/add_review_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/reidashwill/Desktop/week_11_project/spec/features/add_user_pages_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           null,
@@ -798,6 +804,6 @@
         ]
       }
     },
-    "timestamp": 1591379218
+    "timestamp": 1591380199
   }
 }
